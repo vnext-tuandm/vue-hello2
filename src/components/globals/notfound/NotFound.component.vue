@@ -5,8 +5,12 @@
 </template>
 
 <script>
+import NoFooterLayoutVue from '../../../layouts/NoFooterLayout.vue';
 export default {
-  name: "NotFound"
+  name: "NotFound",
+  created() {
+      this.$emit('update:layout', NoFooterLayoutVue);
+  },
 }
 </script>
 

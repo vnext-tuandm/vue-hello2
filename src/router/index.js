@@ -1,5 +1,7 @@
 import Router from 'vue-router'
 import DashboardUser from "../components/users/dashboard/Dashboard.component.vue";
+import ListUser from "../components/users/dashboard/listusers/ListUser.component.vue"
+import CreateUser from "../components/users/dashboard/create/CreateUser.component.vue"
 import DashboardAdmin from "../components/admins/dashboard/Dashboard.component.vue";
 import Login from "../components/globals/login/Login.component.vue";
 import NotFound from "../components/globals/notfound/NotFound.component.vue";
@@ -11,8 +13,17 @@ const routes = [
     component: DashboardUser,
     meta: {
         requiresAuth: true,
-        layout: 'AppLayout'
-    }
+    },
+    children: [
+      {
+        path: 'create',
+        component: CreateUser
+      },
+      {
+        path: 'users',
+        component: ListUser
+      }
+    ]
   },
   {
     path: "/admin",
@@ -21,7 +32,6 @@ const routes = [
     meta: {
         requiresAuth: true,
         is_admin : true,
-        layout: 'AppLayout'
     }
   },
   {
@@ -30,7 +40,6 @@ const routes = [
     component: Login,
     meta: {
         guest: true,
-        layout: 'AppLayout'
     }
   },
   {
@@ -38,7 +47,6 @@ const routes = [
     name: 'NotFound',
     component: NotFound,
     meta: {
-      layout: 'AppLayout'
     }
   }
 ];

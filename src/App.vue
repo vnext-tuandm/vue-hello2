@@ -1,22 +1,27 @@
 <template>
 <v-app> 
   <!-- <app-layout> -->
-    <Header/>
-        <router-view />
-    <Footer/>
+   <component :is="layout">
+    <router-view :layout.sync="layout"/>
+  </component>
   <!-- </app-layout> -->
 </v-app>
 </template>
 
 <script>
-import Header from './components/globals/header/Header.component.vue'
-import Footer from './components/globals/footer/Footer.component.vue'
+// import Header from './components/globals/header/Header.component.vue'
+// import Footer from './components/globals/footer/Footer.component.vue'
 // import AppLayout from './layouts/AppLayout.vue'
 export default {
   name: 'App',
+   data() {
+    return {
+      layout: 'div',
+    };
+  },
   components: {
-    Header,
-    Footer,
+    // Header,
+    // Footer,
     // AppLayout
   }
 }
