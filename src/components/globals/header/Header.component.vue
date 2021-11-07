@@ -33,7 +33,7 @@ export default {
           { icon: "home", title: "M&A案件を探す" },
           { icon: "info", title: "投資先を探す" },
           { icon: "warning", title: "イベントを探す" },
-          { icon: "warning", title: "Growtheaterについて" }
+          { icon: "warning1", title: "Growtheaterについて" }
         ]
     };
   },

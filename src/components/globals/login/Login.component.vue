@@ -5,8 +5,9 @@
         <div class="input-container ip-email">
           <img src="@/assets/images/icEmail.svg" class="icon"/>
           <v-text-field
-            :type="text"
+            :type="'text'"
             name="email"
+            v-model="email"
             class="ma-0 pa-0"
             :placeholder="$t('users.email')"
             single-line
@@ -21,6 +22,7 @@
           <v-text-field
             :type="show3 ? 'text' : 'password'"
             name="password"
+            v-model="password"
             value="wqfasds"
             class="ma-0 pa-0"
             :placeholder="$t('users.password')"
@@ -73,7 +75,8 @@ export default {
             // else {
             //     this.$router.push('admin')
             // }
-            this.$messages.label = "Login successfully"
+            this.$messages.label = "Login successfully";
+            this.$messages.types = false
         }
     }
 }

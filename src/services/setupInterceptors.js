@@ -1,7 +1,8 @@
 import axiosInstance from "./api";
 import TokenService from "../services/auth/token.service";
+import router from '../router/index'
 
-const setup = (store) => {
+const setup = () => {
     axiosInstance.interceptors.request.use(
         (config) => {
           const token = TokenService.getLocalAccessToken();
@@ -26,25 +27,12 @@ const setup = (store) => {
           if (originalConfig.url !== "/auth/signin" && err.response) {
             // Access Token was expired
             if (err.response.status === 401 && !originalConfig._retry) {
-              originalConfig._retry = true;
-    
-              try {
-                const rs = await axiosInstance.post("/auth/refreshtoken", {
-                  refreshToken: TokenService.getLocalRefreshToken(),
-                });
-    
-                const { accessToken } = rs.data;
-    
-                store.dispatch('auth/refreshToken', accessToken);
-                TokenService.updateLocalAccessToken(accessToken);
-    
-                return axiosInstance(originalConfig);
-              } catch (_error) {
-                return Promise.reject(_error);
+                this.$messages.label = "Authentication Fail"
+                TokenService.removeUser();
+                router.push('/login')
+                return Promise.reject(err);
               }
-            }
           }
-    
           return Promise.reject(err);
         }
     );

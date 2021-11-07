@@ -1,10 +1,11 @@
 import api from "../api";
 import TokenService from "./token.service";
+import {SIGN_IN_URL, SIGN_UP_URL} from '../apiurl'
 
 class AuthService {
   login({ username, password }) {
     return api
-      .post("/auth/signin", {
+      .post(SIGN_IN_URL, {
         username,
         password
       })
@@ -21,7 +22,7 @@ class AuthService {
   }
 
   register({ username, email, password }) {
-    return api.post("/auth/signup", {
+    return api.post(SIGN_UP_URL, {
       username,
       email,
       password

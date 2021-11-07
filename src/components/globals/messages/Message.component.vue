@@ -1,15 +1,15 @@
 <template>
-    <v-alert type="success" :value="this.alert" class="wrapper-mg">
+    <v-alert :type="this.types ? 'success': 'error'" :value="this.alert" class="wrapper-mg">
       {{messages}}
     </v-alert>
 </template>
 <script>
 export default {
     name: "Messages",
-    props: ['messages'],
+    props: ['messages', 'types'],
     data() {
         return {
-            alert: false
+            alert: false,
         };
     },
     watch: { 
@@ -22,8 +22,15 @@ export default {
                     setTimeout(()=>{
                         self.alert = false
                         self.$messages.label = ""
+                        self.$messages.types = false
                     },2000)
                 }
+            },
+            deep: true
+        },
+        types:{
+            handler: function(newVal, oldVal) {
+                console.log('Prop changed: ', newVal, ' | was: ', oldVal)
             },
             deep: true
         }
@@ -32,6 +39,7 @@ export default {
         setTimeout(()=>{
             this.alert = false
             this.$messages.label = ""
+            this.$messages.types = false
         },2000)
     }
 }

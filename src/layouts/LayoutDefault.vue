@@ -1,6 +1,6 @@
 <template>
 <v-app> 
-  <message-component :messages="this.$messages.label"/>
+  <message-component :messages="this.$messages.label" :types="this.$messages.types"/>
   <header-component/>
   <div style="height: 100%">
       <router-view/>

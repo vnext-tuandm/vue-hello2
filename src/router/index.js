@@ -1,6 +1,6 @@
 import Router from 'vue-router'
 import LayoutDefault from "@/layouts/LayoutDefault.vue"
-// import DashboardUser from "../components/users/dashboard/Dashboard.component.vue";
+import DashboardUser from "../components/users/dashboard/Dashboard.component.vue";
 import ListUser from "../components/users/dashboard/listusers/ListUser.component.vue"
 import CreateUser from "../components/users/dashboard/create/CreateUser.component.vue"
 import DashboardAdmin from "../components/admins/dashboard/Dashboard.component.vue";
@@ -24,6 +24,10 @@ const routes = [
         // requiresAuth: true,
     },
     children: [
+      {
+        path: '/',
+        component: DashboardUser
+      },
       {
         path: 'create',
         component: CreateUser

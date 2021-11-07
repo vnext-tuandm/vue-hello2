@@ -10,7 +10,7 @@ import store from "./stores";
 
 import setupInterceptors from './services/setupInterceptors';
 
-setupInterceptors(store);
+setupInterceptors();
 
 import vuetify from './plugins/vuetify' 
 import '@/commons/app.style.scss'

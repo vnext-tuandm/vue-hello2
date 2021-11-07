@@ -2,7 +2,8 @@
 export default {
   install(Vue) {
     Vue.prototype.$messages = Vue.observable({
-        label: 'test' 
+        label: 'test' ,
+        types: false
     });
   },
 };
