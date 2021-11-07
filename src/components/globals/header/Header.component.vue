@@ -1,55 +1,42 @@
-<template lang="">
-   <div>
+<template>
     <v-app-bar
       color="white"
       dense
       flat
+      height="70px"
       :elevation=1
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Page title</v-toolbar-title>
-
+      <img src="@/assets/images/brand.png"/>
+      <v-toolbar-items class="hidden-sm-and-down align-center ml-2">
+          <a v-for="item in menu" :key="item.icon" :to="item.link" flat class="pa-2 nav-item">{{
+            item.title
+          }}</a>
+      </v-toolbar-items>
       <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-menu
-        left
-        bottom
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn
-            icon
-            v-bind="attrs"
-            v-on="on"
-          >
-            <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </template>
-
-        <v-list>
-          <v-list-item
-            v-for="n in 5"
-            :key="n"
-            @click="() => {}"
-          >
-            <v-list-item-title>Option {{ n }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-    </v-app-bar>
-  </div>
+      
+        <v-icon class="hidden-md-and-up mdi mdi-menu"></v-icon>
+        <!-- <v-list>
+          <v-list-tile v-for="item in menu" :key="item.icon">
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list> -->
+  </v-app-bar>
 </template>
 <script>
 export default {
-    name: "Header"
+    name: "Header",
+    data() {
+      return {
+        menu: [
+          { icon: "home", title: "M&A案件を探す" },
+          { icon: "info", title: "投資先を探す" },
+          { icon: "warning", title: "イベントを探す" },
+          { icon: "warning", title: "Growtheaterについて" }
+        ]
+    };
+  },
 }
 </script>
 <style lang="scss">

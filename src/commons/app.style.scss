@@ -1,0 +1,20 @@
+@font-face{ 
+    font-family: 'mplus-1p-regular';
+    src: url('../assets/fonts/mplus-1p-regular.eot');
+    src: url('../assets/fonts/mplus-1p-regular.eot') format('embedded-opentype'),
+         url('../assets/fonts/mplus-1p-regular.woff') format('woff'),
+         url('../assets//fonts/mplus-1p-regular.ttf') format('truetype');
+}
+
+@font-face{ 
+    font-family: 'mplus-1p-bold';
+    src: url('../assets/fonts/mplus-1p-bold.ttf');
+}
+
+*, body, html{
+    font-family: 'mplus-1p-regular', 'mplus-1p-bold';
+}
+
+#app{
+    margin-top: 0 !important;
+}

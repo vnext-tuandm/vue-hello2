@@ -1,12 +1,16 @@
 <template>
 <v-app> 
-    <header-component/>
-        <slot/>
-    <footer-component/>
+  <message-component :messages="this.$messages.label"/>
+  <header-component/>
+  <div style="height: 100%">
+      <router-view/>
+  </div>
+  <footer-component/>
 </v-app>
 </template>
 
 <script>
+import MessageComponent from '@/components/globals/messages/Message.component.vue'
 import FooterComponent from '../components/globals/footer/Footer.component.vue'
 import HeaderComponent from '../components/globals/header/Header.component.vue'
 export default {
@@ -14,17 +18,10 @@ export default {
   components: {
     HeaderComponent,
     FooterComponent,
+    MessageComponent,
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
 </style>

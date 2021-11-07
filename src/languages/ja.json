@@ -1,0 +1,11 @@
+{
+    "users":{
+        "email": "メール",
+        "password": "パスワード",
+        "login": "ログイン",
+        "policy": "Policy"
+    },
+    "messages": {
+
+    }
+}

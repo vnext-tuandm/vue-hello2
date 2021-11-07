@@ -4,7 +4,6 @@ import App from './App.vue'
 Vue.config.productionTip = false
 import Router from 'vue-router'
 import router from './router'
-import vuetify from './plugins/vuetify' 
 Vue.use(Router)
 
 import store from "./stores";
@@ -13,8 +12,14 @@ import setupInterceptors from './services/setupInterceptors';
 
 setupInterceptors(store);
 
+import vuetify from './plugins/vuetify' 
+import '@/commons/app.style.scss'
+import i18n from '@/plugins/i18n';
+import assetPlugin from '@/plugins/asset';
+Vue.use(assetPlugin);
 
 new Vue({
+  i18n,
   vuetify,
   router,
   store,

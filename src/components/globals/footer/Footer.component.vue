@@ -1,6 +1,13 @@
 <template lang="">
     <div>
-        <h3>Footer</h3>
+        <v-footer padless>
+            <v-col
+            class="text-center"
+            cols="12"
+            >
+            {{ new Date().getFullYear() }} — <strong>TDM</strong>
+            </v-col>
+        </v-footer>
     </div>
 </template>
 <script>

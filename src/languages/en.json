@@ -1,0 +1,11 @@
+{
+    "users":{
+        "email": "Email",
+        "password": "Password",
+        "login": "Login",
+        "policy": "Policy"
+    },
+    "messages": {
+
+    }
+}

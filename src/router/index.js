@@ -1,5 +1,6 @@
 import Router from 'vue-router'
-import DashboardUser from "../components/users/dashboard/Dashboard.component.vue";
+import LayoutDefault from "@/layouts/LayoutDefault.vue"
+// import DashboardUser from "../components/users/dashboard/Dashboard.component.vue";
 import ListUser from "../components/users/dashboard/listusers/ListUser.component.vue"
 import CreateUser from "../components/users/dashboard/create/CreateUser.component.vue"
 import DashboardAdmin from "../components/admins/dashboard/Dashboard.component.vue";
@@ -10,9 +11,9 @@ const routes = [
   {
     path: "/user",
     name: "DashboardUser",
-    component: DashboardUser,
+    component: LayoutDefault ,
     meta: {
-        requiresAuth: true,
+        // requiresAuth: true,
     },
     children: [
       {
@@ -37,10 +38,16 @@ const routes = [
   {
     path: "/login",
     name: "Login",
-    component: Login,
+    component: LayoutDefault,
     meta: {
         guest: true,
-    }
+    },
+    children: [
+      {
+        path: '/',
+        component: Login
+      }
+    ]
   },
   {
     path: '/404',

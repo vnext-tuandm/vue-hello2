@@ -1,0 +1,45 @@
+.wrapper-lg{
+    background-image: url("../../../assets/images/background.png");
+    background-size:cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-login{
+    background-color: $bg-barnd;
+    padding: 12.75px 66.69px 12.75px 65.31px;
+    font-weight: bold;
+    color: $white;
+    font-size: 17px;
+    line-height: 25px;
+    margin-top: 48px;
+}
+.wrapper-card-lg{
+    padding: 49px 47px 47px 49px;
+    min-width: 348px;
+}
+.wrapper-card-lg label{
+    justify-content: end;
+    margin-top: 24px;
+    font-size: 13px;
+    line-height: 18px;
+    width: 100%;
+    display: flex;
+}
+
+.wrapper-card-lg strong{
+    font-style: normal;
+    font-weight: bold;
+    color: $bg-barnd;
+    font-size: 28px;
+    line-height: 34px;
+}
+.ip-email{
+    margin-top: 48px;
+}
+.v-input__slot {
+    padding: 0 0 !important;
+}
+.theme--light.v-text-field--solo>.v-input__control>.v-input__slot {
+    background: transparent !important;
+}
