@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <v-footer padless>
+        <v-footer padless class="wrapper-ft">
             <v-col
             class="text-center"
             cols="12"
@@ -15,6 +15,10 @@ export default {
     name: "Footer"
 }
 </script>
-<style lang="">
-    
+<style lang="scss">
+    $bg-footer :#0B0D17;
+    .wrapper-ft{
+        background-color: $bg-footer !important;
+        color: white !important;
+    }
 </style>

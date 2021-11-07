@@ -9,6 +9,14 @@ import NotFound from "../components/globals/notfound/NotFound.component.vue";
 
 const routes = [
   {
+    path: "/",
+    name: "Home",
+    component: LayoutDefault,
+    meta: {
+        guest: true,
+    }
+  },
+  {
     path: "/user",
     name: "DashboardUser",
     component: LayoutDefault ,
